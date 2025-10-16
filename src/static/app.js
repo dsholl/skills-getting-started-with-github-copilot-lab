@@ -84,6 +84,11 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         messageDiv.classList.add("hidden");
       }, 5000);
+
+        // Refresh activities list to show updated participants
+        if (response.ok) {
+          fetchActivities();
+        }
     } catch (error) {
       messageDiv.textContent = "Failed to sign up. Please try again.";
       messageDiv.className = "error";
